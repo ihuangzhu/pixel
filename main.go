@@ -20,7 +20,7 @@ import (
 
 const SquarePixels = 5
 
-const Charters = " .,;?!|-_~`@#$%^&*()=+abcdefghijklmnopqrstuvxxyzABCDEFGHIJKLMNOPQRSTUVXXYZ0123456789一二三四五六七八九十墨▇"
+const Characters = " .,;?!|-_~`@#$%^&*()=+abcdefghijklmnopqrstuvxxyzABCDEFGHIJKLMNOPQRSTUVXXYZ0123456789一二三四五六七八九十墨▇"
 
 var ftBytes []byte
 var ft *truetype.Font
@@ -48,7 +48,7 @@ func main() {
 	mapped[0] = image.NewAlpha(image.Rect(0, 0, SquarePixels, SquarePixels)) // 透明图片
 
 	// 载入字符
-	for _, char := range Charters {
+	for _, char := range Characters {
 		if gary, img := loadChar(char, SquarePixels, SquarePixels, float64(SquarePixels)); img != nil {
 			mapped[gary] = img
 		}
